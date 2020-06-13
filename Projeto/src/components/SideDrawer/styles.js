@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 export const Container = styled.div`
   position: relative;
-  z-index: -1;
+  z-index: 1;
 
   &::before {
     content: '';
@@ -22,11 +23,11 @@ export const NotificationList = styled.div`
   position: absolute;
   left: calc(10% - 350px);
   top: calc(100% + 40px);
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 6px 0px 6px 6px;
+  background: #999;
+  border-radius: 8px 0px 8px 8px;
   width: 320px;
-  height: 400px;
-  display: ${(props) => (props.visible ? 'block' : 'none')};
+
+  padding: 3px 6px;
 
   &::before {
     content: '';
@@ -39,28 +40,68 @@ export const NotificationList = styled.div`
     border-right: 0px solid transparent;
     border-bottom: 20px solid rgba(0, 0, 0, 0.4);
   }
-
   .header_list {
-    margin-top: 10px;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: #fff;
     width: 100%;
   }
+
+  .notification_item {
+    margin-left: -50px;
+    justify-content: center;
+    width: 100%;
+
+    .image {
+      background: yellow;
+    }
+  }
 `;
+export const Scroll = styled(PerfectScrollbar)`
+  flex-direction: column;
+  max-height: 400px;
+  padding: 5px 5px;
+`;
+
 export const Notification = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   color: #fff;
+  margin: 0px;
+
+  width: 280px;
+
   & + div {
     margin-top: 15px;
-    padding-top: 15px;
+    margin-left: 0px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  img {
+    min-height: 100px;
   }
 
   strong {
-    font-size: 13px;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 18px;
     line-height: 18px;
   }
-  p {
+  span {
+    color: black;
+    font-weight: bold;
+    padding-top: 10px;
     font-size: 12px;
-    line-height: 18px;
-    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+  p {
+    align-items: baseline;
+    margin-top: 2px;
+    font-size: 10px;
+  }
+
+  .price {
+    display: block;
   }
 `;

@@ -33,6 +33,50 @@ export const ProductList = styled.ul`
   grid-gap: 15px;
   list-style: none;
 
+  .discount {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    padding: 5px;
+    margin-top: 0px;
+    margin-left: 15px;
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: black;
+
+    p {
+      align-items: center;
+      font-size: 17px;
+      text-align: center;
+      color: white;
+    }
+  }
+  .discounted_price {
+    margin-right: 10px;
+    font-size: 12px;
+    color: red;
+    text-decoration: line-through;
+    font-weight: normal;
+  }
+  .button_heart {
+    display: block;
+    position: relative;
+    background: none;
+    border: none;
+    bottom: 70px;
+    line-height: 15px;
+    height: 16px;
+    margin-right: 100px;
+    margin-left: 280px;
+    color: gray;
+    align-items: center;
+
+    svg:hover {
+      color: red;
+    }
+  }
+
   li {
     width: 320px;
     display: flex;
@@ -64,24 +108,6 @@ export const ProductList = styled.ul`
     }
     > button {
       width: 24px;
-    }
-
-    .button_heart {
-      display: block;
-      position: relative;
-      background: none;
-      border: none;
-      bottom: 70px;
-      line-height: 15px;
-      height: 16px;
-      margin-right: 100px;
-      margin-left: 280px;
-      color: gray;
-      align-items: center;
-
-      svg:hover {
-        color: red;
-      }
     }
   }
 `;

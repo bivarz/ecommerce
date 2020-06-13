@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   position: fixed;
@@ -11,11 +10,13 @@ export const Container = styled.div`
   background: #ffff;
   top: 0px;
   border-bottom: 3px solid #f6f6f6;
+  padding: 5px;
   z-index: 1;
 
   button {
     border: 0;
     background: none;
+    z-index: 2;
   }
 
   img {
@@ -33,7 +34,7 @@ export const Container = styled.div`
     align-items: center;
   }
 `;
-export const Bag = styled(Link)`
+export const Bag = styled.div`
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -58,9 +59,10 @@ export const Bag = styled(Link)`
     border: 1.5px solid #fff;
     border-radius: 10px;
     background: #f33333;
+    z-index: 2;
   }
 `;
-export const Search = styled(Link)`
+export const Search = styled.div`
   display: flex;
   margin-top: 5px;
   align-items: center;
@@ -68,7 +70,7 @@ export const Search = styled(Link)`
   margin-right: 7px;
 `;
 
-export const Favorites = styled(Link)`
+export const Favorites = styled.div`
   display: flex;
   align-items: center;
   text-decoration: none;
