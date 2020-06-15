@@ -5,8 +5,7 @@ export const Container = styled.div`
   margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
-
-  min-width: 320px;
+  min-width: 12px;
   max-width: 1280px;
 
   @media only screen and (max-width: 910px) {
@@ -23,7 +22,6 @@ export const Container = styled.div`
     align-items: center;
     margin: 80px auto auto;
     width: 100%;
-
     min-width: 320px;
   }
 `;
@@ -32,6 +30,59 @@ export const ProductList = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
   grid-gap: 15px;
   list-style: none;
+  align-items: center;
+
+  @media only screen and (max-width: 320px) {
+    max-width: 320px;
+    display: flex;
+
+    list-style: none;
+  }
+  > li {
+    border-radius: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2px;
+    border: 1px solid #f5f5f5;
+    box-shadow: 0px 2px 3px #f5f5f5;
+
+    img {
+      width: 100%;
+    }
+  }
+  img {
+    border-radius: 15px 15px 0px 0px;
+    width: 320px;
+    margin-top: 0px;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    max-width: 320px;
+  }
+  > p {
+    font-size: 16px;
+    line-height: 20px;
+    color: gray;
+    margin-top: 5px;
+  }
+  > span {
+    font-size: 21px;
+    font-weight: bold;
+    margin: 5px 0 20px;
+    color: #000;
+  }
+  > button {
+    width: 24px;
+  }
+  > strong {
+    margin-left: 5px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    align-items: center;
+    width: 100%;
+  }
 
   .discount {
     display: flex;
@@ -64,7 +115,7 @@ export const ProductList = styled.ul`
     position: relative;
     background: none;
     border: none;
-    bottom: 70px;
+    bottom: 30px;
     line-height: 15px;
     height: 16px;
     margin-right: 100px;
@@ -74,40 +125,6 @@ export const ProductList = styled.ul`
 
     svg:hover {
       color: red;
-    }
-  }
-
-  li {
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 2px;
-
-    @media only screen and (max-width: 320px) {
-      width: 320px;
-    }
-    img {
-      width: 320px;
-      margin-top: 0px;
-      justify-content: center;
-      align-self: center;
-      width: 100%;
-      max-width: 320px;
-    }
-    > p {
-      font-size: 16px;
-      line-height: 20px;
-      color: gray;
-      margin-top: 5px;
-    }
-    > span {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 5px 0 20px;
-      color: #000;
-    }
-    > button {
-      width: 24px;
     }
   }
 `;

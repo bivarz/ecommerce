@@ -9,7 +9,7 @@ import { Container, ProductList } from './styles';
 
 function Home() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const indisponivel =
     'https://fashionista-leovictorcvo.netlify.app/img/no-image.png';
 
@@ -22,45 +22,48 @@ function Home() {
     getData();
   }, []);
 
-  return loading ? (
-    <Loading />
-  ) : (
-      <Container>
-        <ProductList>
-          {products.map((product, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <li key={index}>
-              <Link
-                to={`products/${product.name} `}
-                style={{ textDecoration: 'none' }}
-              >
-                {product.on_sale ? (
-                  <span className="discount">
-                    <p>-{product.discount_percentage}</p>
-                  </span>
-                ) : null}
-                <img
-                  src={product.image ? product.image : indisponivel}
-                  alt={product.name}
-                />
-              </Link>
+  if (loading === true) return <Loading />;
 
-              <p>{product.name}</p>
-
-              <span>
-                {product.discount_percentage ? (
-                  <span className="discounted_price">{product.actual_price}</span>
-                ) : null}
-                {product.regular_price}
-              </span>
-              <button type="button" className="button_heart">
-                <TiHeartOutline size={24} />
-              </button>
-            </li>
-          ))}
-        </ProductList>
-      </Container>
-    );
+  return (
+    <Container>
+      <ProductList>
+        {products.map((product, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={index}>
+            <Link
+              to={`products/${product.name} `}
+              style={{ textDecoration: 'none' }}
+            >
+              {product.on_sale ? (
+                <span className="discount">
+                  <p>-{product.discount_percentage}</p>
+                </span>
+              ) : null}
+              <img
+                src={product.image ? product.image : indisponivel}
+                alt={product.name}
+              />
+            </Link>
+            <p className="name">{product.name}</p>
+            <span>
+              {product.discount_percentage ? (
+                <span className="discounted_price">
+                  {product.regular_price}
+                </span>
+              ) : null}
+              <strong>{product.actual_price}</strong>
+            </span>
+            <button type="button" className="button_heart">
+              <TiHeartOutline size={24} />
+            </button>
+          </li>
+        ))}
+      </ProductList>
+    </Container>
+  );
 }
+const mapStateToProps = (state) => {
+  return {};
+};
 
 export default connect()(Home);

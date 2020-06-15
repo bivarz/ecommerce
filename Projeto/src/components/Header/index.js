@@ -11,7 +11,7 @@ import { Container, Bag, Search, Favorites } from './styles';
 import logo from '../../assets/images/logo.png';
 
 export default function Header() {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const handleClose = () => {
     setActive(false);
   };

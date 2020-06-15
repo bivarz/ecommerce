@@ -10,7 +10,7 @@ export const Container = styled.div`
   background: #ffff;
   top: 0px;
   border-bottom: 3px solid #f6f6f6;
-  padding: 5px;
+
   z-index: 1;
 
   button {
