@@ -51,6 +51,7 @@ export default function Header() {
                   type="button"
                   onMouseOver={handleOpen}
                   onFocus={() => null}
+                  onClick={() => setActive(false)}
                 >
                   <RiShoppingBagLine size={30} />
                 </button>

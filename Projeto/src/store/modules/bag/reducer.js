@@ -1,3 +1,3 @@
-export default function Bag() {
+export default function bag() {
   return [];
 }

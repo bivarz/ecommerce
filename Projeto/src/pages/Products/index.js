@@ -1,9 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import getProductId from '../../utils/getProductId';
 import { Container } from './styles';
 
-export default function EmptyFavorites() {
+function Products({ match }) {
+  const [product, setProduct] = useState([]);
+  const params = match.params.styles;
+
+  useEffect = (() => {
+
+
+  }[params])
+
+  const dispatch = useDispatch();
+  function addToBag() {
+    dispatch({ type: 'ADD_TO_BAG' });
+  }
+
   return (
     <Container>
       <div className="content">
@@ -28,11 +42,17 @@ export default function EmptyFavorites() {
             <span className="tam-button">GG</span>
           </div>
 
-          <Link to="/">
-            <button type="button">Adicionar à Sacola</button>
-          </Link>
+          <button type="button" onClick={() => addToBag}>
+            Adicionar à Sacola
+          </button>
         </div>
       </div>
     </Container>
   );
 }
+
+export default Products;
+
+Products.propTypes = {
+  match: PropTypes.number.isRequired,
+};

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import Bag from './bag/reducer';
-import Favorites from './favorites/reducer';
-import Search from './search/reducer';
+import Bag from './bag';
+import Favorites from './favorites';
+import Search from './search';
 
 export default combineReducers({
   Bag,
